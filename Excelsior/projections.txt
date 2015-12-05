@@ -1,0 +1,9 @@
+Excelsior is a python script, and so it may easily be integrated into a webapp.
+Our entrepreneurial goal for this project is to implement Excelsior as a web service.
+Users may visit our site and upload images to be converted, the script will run on uploaded 
+images, and if meaningful output is produced, users will be given a download link for their 
+output.
+This may be provided on a pay-by-page basis, with the full source being available for a fee or 
+possibly for free with a donation link.
+
+Projections for Excelsior are...

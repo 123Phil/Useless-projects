@@ -1,0 +1,54 @@
+Psuedocode Design
+
+//may need to be written into a node to navigate in the list
+Student Class Structure
+public
+	Constructor(First, Last, Attendance)
+	Deconstructor
+	void add_attend(char mark)
+		Attendance = Attendace + mark
+	void edit_certain_date(int n, char mark)
+		Navigate to the nth char in the string
+			replace that char with the mark
+	get_name()
+	get_last()
+	get_first()
+private	
+	Variables
+		string First 
+		string Last 
+		string Attendance //String of attendance report
+		
+// extremely sceptical, not sure if needed or will work as plan
+AttendanceSheet Class Structure
+public
+	Constructor
+	Deconstructor
+	build()
+		use file input to build AttendanceSheet
+	save()
+		export into a file
+	
+	bool check_n(int n)
+		return n < currentdate
+	
+	void sort_by_last()
+	void sort_by_first()
+	void sort_by_rollnum()
+		essentially reset?
+	search_by_name()
+	
+	add_student
+	drop_student
+	
+	edit_by_num(int date)
+		check_n(date)
+		node->edit_certain_date(int n, char mark)
+	edit_by_name(int date)
+		check_n(date)
+		search_by_name()
+		node->edit_certain_date(int n, char mark)
+private
+	Variables
+		int currentdate	//current date
+		

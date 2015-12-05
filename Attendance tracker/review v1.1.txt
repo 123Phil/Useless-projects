@@ -1,0 +1,10 @@
+First version review was taken into account and modifications have been made.
+
+Updates in v1.1:
+- Input sanitization - many of the invalid inputs that would previously crash the program have been handled with try/except blocks which either return to main menu on bad input or prompt the user for valid input.
+- Loading saved data - on reading corrupted data, the program will simply skip loading it and move to the next option.
+- Date checking - When setting new course dates, the program will ensure that the start date is not later than the end date.
+	- There is still a bug here however. If new dates are set and then bad input is given, the user can exit to main menu without finishing the set_details routine. At this point the start_date and end_date will not match the course dates. Fixing this bug is recommended for v1.2
+- Another similar bug exists; if the user is marking attendance by student and inputs valid dates for absents, but invalid dates for tardies, the absents will be marked and the program will not mark tardies. The solution here is not clear, I recommend leaving the program as is, leaving the responsibility for proper input with the user.
+- self.drops[] has been commented out, as sorting did not keep proper track of drops. The user may now update attendance for dropped students...
+- Issues with multiple students sharing the same name have not been addressed in v1.1

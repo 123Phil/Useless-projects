@@ -1,0 +1,58 @@
+This is an outline of what I tried to do the break the program or mess with the display.
+tl;dr:	- Improper input will cause it to crash. 
+		- The only thing that make the program weird is when you reverse the start date with the end date. (for ex 2012/4/20 to 2012/3/14)
+		- Running more than 99 day will make the char off aligned after the 99th day. Shouldn't really matter.
+		
+I'll probably look back at the code some more if I can think of anything else. 
+The only thing that should be fixed is that the start date is always before the end date to prevent the 0 days. 
+		
+Given all directions are followed, the program will functions perfectly fine.
+
+Inputs
+	dates(2014/4/20)
+		invalid date (eg month > 12)
+			crash
+		out of order input -
+			no days but continues on with the program
+	days(mon,tue)
+		improper input (no ',', non-word from dict 'mond')
+			crash
+		not in order (eg fri,mon) -
+			works fine
+	menu inputs(1,2,3)
+		improper input - 
+			fine
+	attendance input
+		part 1 - date#/student#
+			out of range int input -
+				crash
+			nonint input
+				handled
+		part 2 - absence/tardy
+			out of range int input
+				crash
+			nonint input
+				crash
+	names via user input or file input
+		improper input (no ',') (left an empty line) (just left " , ")
+			crash
+	file input from saved_attendance_data.txt
+		assuming problem with names applys here
+			improperly modifying the first line would probably break it
+		remove a char for attendance (OOO-- to OO--)
+			does not show in print chart
+			crash if user tries to edit attendance in the last day
+				from this, will assume that adding an extra char will run fine but will display an extra char in the report
+				
+Format and odd occurrence
+Students with long last name affecting table format - 
+	handled, limit on char in string
+Students with identical names(first and last) - 
+	newly added student is placed before the original
+	say added another John Smith to the poster
+	4. Smith, J. <- clean record and therefore is the new john
+	5. Smith, J. <- has a record and therefore is the original John
+Students with same last name and same first letter of first name (eg John Smith and Jane Smith) 
+	follows abc order of first name
+Number of course days exceeding 99 - 
+	Off alignment in table but scenario would probably rarely occur

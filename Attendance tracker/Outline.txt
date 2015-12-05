@@ -1,0 +1,76 @@
+Note: make executive summary, design specifics, screen shots, user doc, source code
+
+Attendance Program
+
+A program that will emulate an attendance sheet to be used in class.
+Main features: multiple ways of checking off student, display a chart of attendance,
+ report the attendance statistics, allow editing of the data, and adding/dropping students. 
+Additional features: separate names to first and last for sorting purposes
+ 
+File in/out
+	Program will use an external *.txt file to import and export data.
+		Sample line of *.txt file: 	// X - Absent, O - Attended, D - Dropped, '-' - Not Attending
+		
+	first line will include current data(int)
+	Name | Date Joined Calls(just an int) | Day 1(X/O/D/-) | Day 2 | Day n
+	eg
+		Bob Jones | 1 | OOOOXOXXOXOOOOO
+		Dropped Kid | 1 | OOOOOXOOXD-----
+		Added Kid | 6 | OOXOOXOOOO
+		
+	alternative line sample (more clean and direct)
+	Name | Day 1(X/O/D/-) | Day 2 | Day n
+	eg
+		Bob Jones | OOOOXOXOOXOXOXXOOO
+		Dropped Kid | OOOOOXOOXD-----
+		Added Kid | ------OOXOOXOOOO
+
+Will features multiple ways of checking off students:
+	Name student specifically (input absent student, will handle days of perfect attendance)
+	Check off one by one (daily attendance)
+	
+Edit function in case of mistakes
+	Go to student by either number on roll sheet or name
+
+Add/Drop Student
+	Adding a student will add leading -'s for not attending the class before the first day of that student
+	Dropping a student will add a D at the date of the student dropping
+		Future Days will automatically add -'s after the D
+	
+Report
+	Reports the statistic of that students attendance
+		Attended/Total  
+		Missed/Total  
+		Attended: Missed Ratio 
+		Appearance Percentage
+	Reported by Student
+	Average of the entire class
+	
+Display Chart
+	Output the attendance sheet 
+	Name			|	1|	2|	3|	4|	... n| %| R| Total|
+		problem if output display is not wide enough
+	
+Extras / optional / fancy stuff
+
+	Variables on first line of .txt file for consistency
+		current date/total days
+		or make the first line a base line / header of the chart display e.g.
+			Name |	1|	2|	3|	4|	5| ...	|	n|
+			
+	More on sorting	
+		on top of sort last name or roll call number, 
+			if a student is dropped, they will appear at the bottom of the list
+
+	Separate first name and last name for sorting purposes
+		sort by last name
+		can call by first name
+		Last|	First|	1|	2|	3| so on
+		
+	Attach dates(e.g. 4/20/14, 4/21/14 or 14/4/20) to date of class
+		add 7 day for weekly meet-ups
+		drastically changes how the the Chart can be displayed
+		
+	Add tardy mark
+		maybe count as .5 for average (O = 1, X = 0, T = .5)
+	

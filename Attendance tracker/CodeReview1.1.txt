@@ -1,0 +1,16 @@
+Review for v1.1
+
+Probably doesn't need a fix
+Prompt for resetting the data pops up after inputting an invalid value. Same for reversed start-end dates. It will still function correctly if you just enter 'y'. 
+	What days does the class meet?
+	Enter days as "sun,mon,tue,wed,thu,fri,sat"
+	  ex:  mon,wed
+	m
+	Error reading weekdays, try again.
+	Entering new course details will reset attendance information
+	  Continue: (y/n)
+	  
+Didn't find anything else wrong that wasn't mention
+
+
+-Updated so that it does not ask to continue, but it does prompt for dates again
